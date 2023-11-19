@@ -1,0 +1,2 @@
+TE7240;Cao Việt Đức;4000;IT;IT;Male
+TE7241;Trần Huy Đạt;4000;Marketing;MA;Male
