@@ -19,6 +19,7 @@ class EmployeeManagerApp:
         self.create_buttons()
         self.create_detail_frame()
 
+    # Tạo treeview
     def create_treeview(self):
         self.tree = ttk.Treeview(self.root, column=("c1", "c2", "c3", "c4"), show='headings')
         self.tree.column("#1", anchor=tk.CENTER)
@@ -31,6 +32,7 @@ class EmployeeManagerApp:
         self.tree.heading("#4", text="Department")
         self.tree.grid(column=0, row=0, sticky='nsew', in_=self.root)
         self.tree.bind("<ButtonRelease-1>", self.treeview_click)
+
 
     def create_buttons(self):
         frame = tk.Frame(self.root)
@@ -74,19 +76,23 @@ class EmployeeManagerApp:
         self.gender_data.grid(column=1, row=5, sticky='w', in_=self.detail_frame)
         self.detail_frame.grid(column=0, row=1, sticky='nsew', columnspan=2, in_=self.root)
 
+
     def update_treeview(self):
         self.tree.delete(*self.tree.get_children())
         employee_list = self.employee_manager.get_all_employees()
         for i, employee in enumerate(employee_list):
             self.tree.insert("", "end", values=(i + 1, employee.id, employee.name, employee.department))
 
+    # Hàm xử lý sự kiện click vào treeview
     def treeview_click(self, event):
+        # Lấy item được chọn
         selected_item = self.tree.selection()
         if selected_item:
             employee_id = self.tree.item(selected_item)['values'][1]
             employee = self.employee_manager.get_employee_by_id(employee_id)
             self.update_detail(employee)
 
+    # Hàm xử lý sự kiện click vào nút Add
     def add_button_click(self):
         add_window = tk.Toplevel(self.root)
         add_window.title("Add employee")

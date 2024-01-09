@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from employee_app import EmployeeManagerApp
 
+# Làm login cần đọc phần này
 class Login:
     def __init__(self, root):
         self.root = root
