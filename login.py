@@ -32,7 +32,7 @@ class Login:
         # create password entry with beautiful style entry and show password as *
         self.password_label = tk.Label(self.root, text="Password")
         self.password_label.grid(column=0, row=2, sticky='w', padx=5, pady=5, in_=self.root)
-
+        
         self.password_entry = tk.Entry(self.root, width=30, show="*")
         self.password_entry.grid(column=1, row=2, sticky='w', padx=5, pady=5, in_=self.root)
 

@@ -11,4 +11,4 @@ class Employee:
         self.salary = int(self.salary + (self.salary * percent / 100))
 
     def encode(self):
-        return "{0};{1};{2};{3};{4};{5}".format(self.id, self.name, self.salary, self.department, self.department_id, self.gender)
+        return "{0};{1};{2};{3};{4};{5}".format(self.id, self.name, self.salary, self.department_id, self.department, self.gender)
